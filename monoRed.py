@@ -157,8 +157,8 @@ def drawEight(smoothed):
         if(c.num == CardEnum.MOUNTAIN.value):
             landCount2+=1
     
-    diff1 = abs(idealRatio - (landCount1/8))
-    diff2 = abs(idealRatio - (landCount2/8))
+    diff1 = abs(idealRatio - (landCount1/7))
+    diff2 = abs(idealRatio - (landCount2/7))
     hand1Wins = diff1 <= diff2
     handToReturn = eight1 if hand1Wins else eight2
     deckToDrawFrom = deck1 if hand1Wins else deck2
