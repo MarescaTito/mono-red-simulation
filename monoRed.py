@@ -2,7 +2,7 @@ from enum import Enum
 from itertools import combinations 
 import random
     
-TRIALS = 10000
+TRIALS = 100000
 NUM_LANDS = 18
             
 def doIWinWithScamp(leylines, hand_scamps, hand_swifties, m_rages, insides, maws, felons, swords, lands):
@@ -220,7 +220,7 @@ def handWinsNoEighth(hand):
                 continue
         elif(i==1):
             if(hand_swifties):
-                scamps+=1
+                swifties+=1
                 hand_swifties-=1
             else:
                 continue
@@ -359,7 +359,7 @@ def tryWithMullNoPeeking(smoothed, eight):
     return handWins(six, eighth)
     
 def tryWithMullToFiveNoPeeking(smoothed):
-    eight = drawEight(smoothed)
+    eight = drawEight(False)
     seven = eight[0:7]
     eighth = eight[7]
 
@@ -385,7 +385,7 @@ def tryWithMullToFiveNoPeeking(smoothed):
     return handWins(five, eighth)
 
 def tryWithMullPeeking(smoothed):
-    eight = drawEight(smoothed)
+    eight = drawEight(False)
     seven = eight[0:7]
     eighth = eight[7]
 
@@ -401,7 +401,7 @@ def tryWithMullPeeking(smoothed):
     return False
     
 def tryWithMullToFivePeeking(smoothed):
-    eight = drawEight(smoothed)
+    eight = drawEight(False)
     seven = eight[0:7]
     eighth = eight[7]
 
